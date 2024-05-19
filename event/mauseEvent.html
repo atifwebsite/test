@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        height: 100vh;
+
+        overflow: hidden;
+    }
+
+    section {
+        text-align: center;
+    }
+
+    .rectangle {
+        width: 23rem;
+        height: 23rem;
+        background: #000;
+        border-radius: 1rem;
+        margin-bottom: 3.2rem;
+        transition: all 0.6s linear;
+        box-shadow: rgba(239, 247, 87, 0.2) 0px 8px 24px;
+
+    }
+
+    .addTransition {
+        border-radius: 50%;
+    }
+
+    .addTransition3 {
+        border-radius: 50%;
+        background-color: #f5ee62;
+        translate: -30rem 0rem;
+    }
+
+    .addTransition4 {
+        border-radius: 50%;
+        background-color: #f5ee62;
+        translate: 30rem 0;
+    }
+
+    .addTransition5 {
+        border-radius: 50%;
+        background-color: #f5ee62;
+        translate: -30rem 0;
+
+    }
+
+    .addTransition6 {
+        border-radius: 0%;
+        background-color: #f5ee62;
+        translate: 0rem 0;
+    }
+</style>
+
+<body>
+    <section>
+        <div class="rectangle"></div>
+        <button id="mybtn">onclick</button>
+    </section>
+    <script>
+        let reactdiv = document.querySelector(".rectangle");
+        let Mybtn = document.getElementById("mybtn");
+
+        const eventhandle = () => {
+            console.log('click');
+            reactdiv.style.backgroundColor = "#f5ee62";
+
+        }
+        const eventhandle2=()=>{
+            console.log("dblclick");
+            reactdiv.classList.add("addTransition");
+        }
+        const eventhandle3=()=>{
+            console.log("mouseover");
+            reactdiv.classList.add("addTransition3");
+        }
+        const eventhandle4=()=>{
+            console.log("mouseout");
+            reactdiv.classList.add("addTransition4");
+        }
+        Mybtn.addEventListener('click', eventhandle);
+        Mybtn.addEventListener('dblclick', eventhandle);
+        reactdiv.addEventListener('mouseover', eventhandle3);
+        reactdiv.addEventListener('mouseout', eventhandle4);
+        
+
+    </script>
+</body>
+
+</html>
